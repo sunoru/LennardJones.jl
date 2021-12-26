@@ -1,0 +1,7 @@
+name = "LennardJones"
+uuid = "d8a96929-0be6-44df-b03a-619eb7e9790e"
+authors = ["Sunoru <s@sunoru.com>"]
+version = "0.1.0"
+
+[deps]
+LinearAlgebra = "37e2e46d-f89d-539d-b4ee-838fcccc9c8e"
