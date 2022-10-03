@@ -54,7 +54,7 @@ end
     r;
     ϵ = 1.0, σ = 1.0,
     r_cutoff = 2.5σ
-) = norm_sqr(r) ≥ r_cutoff ^ 2 ? zero(Vector3) :
+) = norm_sqr(r) ≥ r_cutoff ^ 2 ? zero(r) :
     lj_potential_fij(r, ϵ = ϵ, σ = σ)
 
 @inline lj_potential_fij_cutoff(

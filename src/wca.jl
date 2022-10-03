@@ -13,7 +13,7 @@
 
 @inline lj_potential_wca_fij(
     r; ϵ = 1.0, σ = 1.0
-) = norm_sqr(r) ≥ (R_MIN * σ) ^ 2 ? zero(Vector3) :
+) = norm_sqr(r) ≥ (R_MIN * σ) ^ 2 ? zero(r) :
     lj_potential_fij(r, ϵ = ϵ, σ = σ)
 
 @inline lj_potential_wca_fij(
