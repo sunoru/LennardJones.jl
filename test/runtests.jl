@@ -1,15 +1,9 @@
-import Pkg
-
-if dirname(Pkg.project().path) != @__DIR__
-    Pkg.activate(@__DIR__)
-end
-
 using Test
 using LennardJones
 using LinearAlgebra
 
 @testset "Test" begin
-    
+
 @test LennardJones.lj_potential_uij(LennardJones.R_MIN) ≈ -1.0
 
 r₁ = [0.916914, 0.111325, 0.594877]
@@ -39,7 +33,7 @@ f₂ = LennardJones.lj_potential_fij_cutoff(dr, ϵ = ϵ, σ = σ, r_cutoff = cut
 @test LennardJones.lj_potential_fij_cutoff(r₁, r₂, ϵ = ϵ, σ = σ, r_cutoff = cutoff, dist = dist) ≈ -f₂
 
 r₃ = [0.669256, 0.300412, 0.671123]
-dr₂ = r₃ - r₁ 
+dr₂ = r₃ - r₁
 u₃ = LennardJones.lj_potential_wca_uij(dr₂, ϵ = ϵ, σ = σ)
 @test u₃ ≈ 759679.8217248165
 @test LennardJones.lj_potential_wca_uij(r₁, r₃, ϵ = ϵ, σ = σ, dist = dist) ≈ u₃
